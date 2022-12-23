@@ -14,3 +14,10 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: IRANSansWeb;
+  src: url("/fonts/IRANSansWeb.ttf");
+  format: ("ttf");
+  font-display: swap;
+}

@@ -1,31 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CacheProvider } from '@emotion/react';
-import { ThemeProvider, CssBaseline } from '@mui/material';
+import {CacheProvider} from '@emotion/react';
+import {ThemeProvider, CssBaseline} from '@mui/material';
 
 import createEmotionCache from '../utility/createEmotionCache';
 import lightTheme from '../styles/theme/lightTheme';
 import '../styles/globals.css';
 
+import { wrapper } from '../store/store'
+
 const clientSideEmotionCache = createEmotionCache();
 
 const MyApp = (props) => {
-  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+    const {Component, emotionCache = clientSideEmotionCache, pageProps} = props;
 
-  return (
-    <CacheProvider value={emotionCache}>
-      <ThemeProvider theme={lightTheme}>
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </CacheProvider>
-  );
+    return (
+        <CacheProvider value={emotionCache}>
+            <ThemeProvider theme={lightTheme}>
+                <CssBaseline/>
+                <Component {...pageProps} />
+            </ThemeProvider>
+        </CacheProvider>
+    );
 };
 
-export default MyApp;
+export default wrapper.withRedux(MyApp);
 
 MyApp.propTypes = {
-  Component: PropTypes.elementType.isRequired,
-  emotionCache: PropTypes.object,
-  pageProps: PropTypes.object.isRequired,
+    Component: PropTypes.elementType.isRequired,
+    emotionCache: PropTypes.object,
+    pageProps: PropTypes.object.isRequired,
 };
