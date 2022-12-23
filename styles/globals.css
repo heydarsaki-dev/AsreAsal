@@ -15,9 +15,10 @@ a {
   box-sizing: border-box;
 }
 
+
 @font-face {
-  font-family: IRANSansWeb;
-  src: url("/fonts/IRANSansWeb.ttf");
+  font-family: iransans;
+  src: url("/fonts/iransans.ttf");
   format: ("ttf");
   font-display: swap;
 }

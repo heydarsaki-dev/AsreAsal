@@ -6,6 +6,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
@@ -130,7 +131,7 @@ export default function Home() {
             </TableContainer>
             <AddEmployeeDialog open={addEmployeeDialogOpen} onSubmit={dialogSubmitHandler}
                                employeeForEdit={employeeForEdit} onClose={closeAddEmployeeDialog}/>
-            <ConfirmDialog open={removeEmployeeDialogOpen} onClose={()=>setRemoveEmployeeDialogOpen(false)}
+            <ConfirmDialog open={removeEmployeeDialogOpen} onClose={() => setRemoveEmployeeDialogOpen(false)}
                            title='حذف کارمند' text='آیا از حذف این مورد مطمئن هستید؟'
                            onSubmit={() => deleteEmployee()}/>
         </Container>

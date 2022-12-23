@@ -6,7 +6,7 @@ const lightTheme = createTheme({
   },
   direction:'rtl',
   typography: {
-    fontFamily: "IRANSansWeb, sans-serif",
+    fontFamily: "iransans, sans-serif",
   }
 });
 
